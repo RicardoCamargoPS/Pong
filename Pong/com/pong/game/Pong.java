@@ -12,6 +12,7 @@ import com.pong.entidades.Ball;
 import com.pong.entidades.Enemy;
 import com.pong.entidades.Player;
 import com.pong.ui.UIField;
+import com.pong.ui.UIScore;
 
 public class Pong implements Runnable {
 
@@ -27,6 +28,7 @@ public class Pong implements Runnable {
   
     public static Menu menu;
     public static UIField campo;
+    public UIScore playerScor;
 
     public static Ball ball;
     public static Player player;
@@ -51,8 +53,9 @@ public class Pong implements Runnable {
         player = new Player(whidth / 2 - 20 , height - 20, playerBackColor, playerFronColor);
         enemy = new Enemy(campo.getWidth() / 2 - 20, campo.getPy() + 4, enemyBackColor, enemyFronColor);
         ball = new Ball();
-    }
 
+        playerScor = new UIScore(5, 12, "Player");
+    }
     
     
     public void update(){      
@@ -101,6 +104,7 @@ public class Pong implements Runnable {
             ball.render(g);
             player.render(g);
             enemy.render(g);
+            playerScor.render(g);
             
 
         if(gameStatos.equals("gameOver")){

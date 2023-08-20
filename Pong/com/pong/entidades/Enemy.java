@@ -21,7 +21,7 @@ public class Enemy extends Padle {
 
         int dx = Pong.ball.getDx();
 
-        px += dx * vel;
+        //px += dx * vel;
 
         if(ladoEsq() <= Pong.campo.getPx() + 3){
             px = Pong.campo.getPx() + 3 ;
