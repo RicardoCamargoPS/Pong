@@ -33,5 +33,11 @@ public class Padle extends GameObjects {
     public int getWhidth(){
         return width;
     }
+
+    @Override
+    public void setColor(Color back, Color front) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setColor'");
+    }
     
 }

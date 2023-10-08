@@ -24,6 +24,9 @@ public class UIField {
         g.setColor(new Color(255, 150, 50, 200));
         g.drawLine(px, height / 2 + py, width + px - 1, height / 2 + py);
 
+        g.setColor(new Color(0, 150, 0, 200));
+        g.drawLine(width / 2 + px, py, width / 2 + px, height + py);
+
     }
     public int getPx() {
         return px;

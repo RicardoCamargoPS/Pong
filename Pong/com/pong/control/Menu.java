@@ -2,6 +2,7 @@ package com.pong.control;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 
 import com.pong.game.Pong;
@@ -54,24 +55,28 @@ public class Menu {
 
     public void render(Graphics g){
 
-        g.setColor(Color.white);
-        g.setFont(new Font("arial", Font.ITALIC, 14));
-
-        g.drawString("> Pong <", Pong.getWhidth() / 2 - 30, Pong.getHeight() - 200);
+        //FontMetrics fm = g.getFontMetrics();
+        //int larguraTexto;
 
         g.setColor(Color.white);
-        g.setFont(new Font("Courier New", Font.BOLD, 12));
+        g.setFont(new Font("arial", Font.ITALIC, 14));   
+        
+        //larguraTexto = fm.stringWidth("> Pong <");
+        
+        g.drawString("> Pong <", Pong.getWhidth() / 2 - 29, Pong.getHeight() - 200);
+
+        g.setColor(Color.white);
+        g.setFont(new Font("Courier New", Font.BOLD, 12));      
 
         if(paused == false)
-
-            g.drawString("Novo Jogo", Pong.getWhidth() / 2 - 25, 150);
+            g.drawString("Novo Jogo", Pong.getWhidth() / 2 - 31, 150);
         
         else
-            g.drawString("Continuar", Pong.getWhidth() / 2 - 25, 150);
+            g.drawString("Continuar", Pong.getWhidth() / 2 - 31, 150);
 
-        g.drawString("Carregar Jogo", Pong.getWhidth() / 2 - 34, 170);
+        g.drawString("Carregar Jogo", Pong.getWhidth() / 2 - 44, 170);
         g.drawString("Opções", Pong.getWhidth() / 2 - 20, 190);
-        g.drawString("Sair", Pong.getWhidth() / 2 - 10, 210);
+        g.drawString("Sair", Pong.getWhidth() / 2 - 13, 210);
 
         g.setColor(new Color(50, 200, 50, 255));
 

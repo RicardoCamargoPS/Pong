@@ -2,7 +2,6 @@ package com.pong.control;
 
 import com.pong.entidades.Ball;
 import com.pong.entidades.GameObjects;
-import com.pong.entidades.Padle;
 
 public class Collision {
 
@@ -13,7 +12,7 @@ public class Collision {
                obj1.ladoCima() <= obj2.ladoBaixo();
     }
 
-    public void testCollision(Padle padle, Ball bola){
+    public void testCollision(GameObjects padle, Ball bola){
 
         if(!isIntersecting(padle, bola)) return;
 

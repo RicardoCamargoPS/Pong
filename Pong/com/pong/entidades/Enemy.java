@@ -7,11 +7,11 @@ import com.pong.game.Pong;
 
 public class Enemy extends Padle {
 
-    public Enemy(int px, int py, Color back, Color front) {
+    public Enemy(int px, int py) {
         this.px = px;
         this.py = py;
-        this.back = back;
-        this.front = front;
+        back = new Color(139, 54, 38, 255);
+        front = new Color(255, 99, 71, 255);
         this.width = 50;
         this.height = 10;
     }
@@ -21,15 +21,14 @@ public class Enemy extends Padle {
 
         int dx = Pong.ball.getDx();
 
-        //px += dx * vel;
+        px += dx * vel;
 
         if(ladoEsq() <= Pong.campo.getPx() + 3){
             px = Pong.campo.getPx() + 3 ;
         }
         else if(ladoDir() - 3  >= Pong.campo.getWidth()){
             px = Pong.campo.getWidth() - width + 3;
-        }
-        
+        }        
 
     }
     @Override

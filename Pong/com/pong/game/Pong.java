@@ -36,12 +36,7 @@ public class Pong implements Runnable {
     
 
 
-    public Pong() {
-        Color playerBackColor = new Color(0, 0, 128, 255);
-        Color playerFronColor = new Color(65, 105, 225, 255);
-
-        Color enemyBackColor = new Color(139, 54, 38, 255);
-        Color enemyFronColor = new Color(255, 99, 71, 255);
+    public Pong() {       
 
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB);
@@ -50,8 +45,8 @@ public class Pong implements Runnable {
 
         menu = new Menu();
         campo = new UIField();       
-        player = new Player(whidth / 2 - 20 , height - 20, playerBackColor, playerFronColor);
-        enemy = new Enemy(campo.getWidth() / 2 - 20, campo.getPy() + 4, enemyBackColor, enemyFronColor);
+        player = new Player(whidth / 2 - 20 , height - 20);
+        enemy = new Enemy(campo.getWidth() / 2 - 20, campo.getPy() + 4);
         ball = new Ball();
 
         playerScor = new UIScore(5, 12, "Player");

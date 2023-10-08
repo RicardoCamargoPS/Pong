@@ -92,5 +92,11 @@ public class Ball extends GameObjects{
 
         System.out.println(x +  "\n" + y);
     }
+
+    @Override
+    public void setColor(Color back, Color front) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setColor'");
+    }
     
 }
