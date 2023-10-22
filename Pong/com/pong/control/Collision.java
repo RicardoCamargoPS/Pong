@@ -1,5 +1,7 @@
 package com.pong.control;
 
+import java.util.Random;
+
 import com.pong.entidades.Ball;
 import com.pong.entidades.GameObjects;
 
@@ -16,15 +18,18 @@ public class Collision {
 
         if(!isIntersecting(padle, bola)) return;
 
-        double overLapLeft = bola.ladoDir() - padle.ladoEsq();
-        double overLapRigth = padle.ladoDir() - bola.ladoEsq();
+        Random random = new Random();
+       
+
+        //double overLapLeft = bola.ladoDir() - padle.ladoEsq();
+        //double overLapRigth = padle.ladoDir() - bola.ladoEsq();
         //double overlapTop = bola.ladoBaixo() - padle.ladoCima();
 		//double overlapBottom = padle.ladoBaixo() - bola.ladoCima();
 
-        boolean ballFromLeft = overLapLeft < overLapRigth;
+        //boolean ballFromLeft = overLapLeft < overLapRigth;
         //boolean ballFromTop = overlapTop < overlapBottom;
 
-        bola.setDx(ballFromLeft ? -1 : 1);
+        bola.setDx((random.nextBoolean()) ? 1 : -1);
 
         bola.setDy(-1);
         /*

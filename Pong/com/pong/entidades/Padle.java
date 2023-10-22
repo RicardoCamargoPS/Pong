@@ -8,7 +8,12 @@ public class Padle extends GameObjects {
     protected Color back, front;
     protected int dx = 0;
     protected boolean isMuving = false;
-    protected double vel = 2;
+    
+    
+    public Padle(){
+        this.width = 10;
+        this.height = 50;
+    }
 
     @Override
     public void update() {
@@ -33,11 +38,4 @@ public class Padle extends GameObjects {
     public int getWhidth(){
         return width;
     }
-
-    @Override
-    public void setColor(Color back, Color front) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setColor'");
-    }
-    
 }

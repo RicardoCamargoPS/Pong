@@ -1,13 +1,16 @@
-package com.pong.control;
+package com.pong.ui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 
 import com.pong.game.Pong;
 
 public class Menu {
+
+    private int px =  Pong.getWhidth() / 2;
+    private int py = 200;
+    
     
 
     private int[] options = {0, 1, 2, 3 };
@@ -55,42 +58,37 @@ public class Menu {
 
     public void render(Graphics g){
 
-        //FontMetrics fm = g.getFontMetrics();
-        //int larguraTexto;
-
         g.setColor(Color.white);
         g.setFont(new Font("arial", Font.ITALIC, 14));   
         
-        //larguraTexto = fm.stringWidth("> Pong <");
-        
-        g.drawString("> Pong <", Pong.getWhidth() / 2 - 29, Pong.getHeight() - 200);
+        g.drawString("> Pong <", px - 29, py - 180);
 
         g.setColor(Color.white);
         g.setFont(new Font("Courier New", Font.BOLD, 12));      
 
         if(paused == false)
-            g.drawString("Novo Jogo", Pong.getWhidth() / 2 - 31, 150);
+            g.drawString("Novo Jogo", px - 31, py - 150);
         
         else
-            g.drawString("Continuar", Pong.getWhidth() / 2 - 31, 150);
+            g.drawString("Continuar", px - 31, py * 150);
 
-        g.drawString("Carregar Jogo", Pong.getWhidth() / 2 - 44, 170);
-        g.drawString("Opções", Pong.getWhidth() / 2 - 20, 190);
-        g.drawString("Sair", Pong.getWhidth() / 2 - 13, 210);
+        g.drawString("Carregar Jogo", px - 44, py - 130);
+        g.drawString("Opções", px - 20, py - 110);
+        g.drawString("Sair", px - 13, py - 90);
 
         g.setColor(new Color(50, 200, 50, 255));
 
         if(options[currentOpitions]  == 0){
-            g.drawString(">", Pong.getWhidth() / 2 - 50, 150);
+            g.drawString(">", px - 50, py - 150);
         }
         else if(options[currentOpitions] == 1){
-             g.drawString(">", Pong.getWhidth() / 2 - 60, 170);
+             g.drawString(">", px - 60, py - 130);
         }
         else if(options[currentOpitions] == 2){
-             g.drawString(">", Pong.getWhidth() / 2 - 44, 190);
+             g.drawString(">", px - 44, py - 110);
         }
          else if(options[currentOpitions] == 3){
-             g.drawString(">", Pong.getWhidth() / 2 - 35, 210);
+             g.drawString(">", px - 35, py - 90);
         }
 
         

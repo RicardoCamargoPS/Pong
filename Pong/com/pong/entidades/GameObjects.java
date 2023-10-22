@@ -8,13 +8,12 @@ public abstract class GameObjects extends Rectangle {
 
     protected int px, py, width, height;
     protected Color backColor, frontColor;
+    protected double vel = 2;
     
 
     abstract public void update();
 
-    abstract public void render(Graphics g);
-
-    public abstract void setColor(Color back, Color front);
+    abstract public void render(Graphics g);  
    
 
     public int ladoDir(){

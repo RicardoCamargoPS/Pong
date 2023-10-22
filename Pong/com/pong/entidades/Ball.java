@@ -2,17 +2,23 @@ package com.pong.entidades;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 import com.pong.game.Pong;
 
 public class Ball extends GameObjects{
 
-    private int dx = 1, dy = -1;
+    private int dx, dy;
     private double vel = 3;
     private int ray = 7;
 
     public Ball() {
-        setPosition();
+
+        Random random = new Random();
+        dx = (random.nextBoolean()) ? 1 : -1;
+        dy = (random.nextBoolean()) ? 1 : -1;
+        
+        setPosition(); 
 
         width = ray;
         height = ray;       
@@ -34,15 +40,7 @@ public class Ball extends GameObjects{
         else if(ladoEsq() <= Pong.campo.getPx()){
             dx *= - 1;
            
-        } 
-
-        if(px <= 3){
-            px = Pong.campo.getPx() + 1;
-        }
-        if(px + width > Pong.campo.getWidth()){
-             px = Pong.campo.getPx() - width;
-
-        }
+        }        
         
         if(ladoCima()  <= Pong.campo.getPy() ){
             dy *= - 1;
@@ -89,14 +87,6 @@ public class Ball extends GameObjects{
 
         this.px = x + width / 2 - 4;
         this.py = y + height / 2 - 4;
-
-        System.out.println(x +  "\n" + y);
     }
 
-    @Override
-    public void setColor(Color back, Color front) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setColor'");
-    }
-    
 }

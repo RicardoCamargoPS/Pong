@@ -5,15 +5,17 @@ import java.awt.Graphics;
 
 import com.pong.game.Pong;
 
-public class Enemy extends Padle {
+public class Enemy extends GameObjects {
+
+    private Color back, front;
 
     public Enemy(int px, int py) {
         this.px = px;
         this.py = py;
         back = new Color(139, 54, 38, 255);
-        front = new Color(255, 99, 71, 255);
-        this.width = 50;
-        this.height = 10;
+        front = new Color(255, 99, 71, 255);      
+       
+        this.vel = 3;
     }
 
     @Override

@@ -18,8 +18,8 @@ public Player(int px, int py) {
     this.py = py;
     back = new Color(0, 0, 128, 255);
     front = new Color(65, 105, 225, 255);    
-    this.width = 50;
-    this.height = 10;
+    //this.width = 50;
+    //this.height = 10;
 }
 
     @Override
@@ -58,11 +58,5 @@ public Player(int px, int py) {
     public int getPy(){
         return py;
     }
-
-    @Override
-    public void setColor(Color back, Color front) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setColor'");
-    }
-    
+     
 }
