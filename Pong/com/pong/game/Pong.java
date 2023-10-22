@@ -42,6 +42,7 @@ public class Pong implements Runnable {
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB); 
 
         menu = new Menu();
+        campo = new UIField();
     
     }
 
@@ -70,7 +71,10 @@ public class Pong implements Runnable {
         g.setColor(new Color(80, 80, 100, 255));
         g.fillRect(0, 0, whidth, height);
         
+        
+        campo.render(g);
         menu.render(g);
+       
 
         g = bs.getDrawGraphics();
         g.drawImage(layer, 0, 0, whidth * window.getEscala(), height * window.getEscala(), null);

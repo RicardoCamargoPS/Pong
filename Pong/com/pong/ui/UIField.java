@@ -22,7 +22,7 @@ public class UIField {
         g.fillRect(px, py, width, height);
 
         g.setColor(new Color(255, 150, 50, 200));
-        g.drawLine(px, height / 2 + py, width + px - 1, height / 2 + py);
+        g.drawLine(width / 2, py, width / 2, height + py);
                
     }
     public int getPx() {
