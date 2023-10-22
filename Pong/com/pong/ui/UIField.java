@@ -21,8 +21,8 @@ public class UIField {
         g.setColor(Color.black);
         g.fillRect(px, py, width, height);
 
-        g.setColor(new Color(255, 150, 50, 200));
-        g.drawLine(width / 2, py, width / 2, height + py);
+        g.setColor(new Color(255, 150, 50, 100));
+        g.drawLine(width / 2, py, width / 2, height + py - 1);
                
     }
     public int getPx() {

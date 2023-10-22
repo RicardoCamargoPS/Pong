@@ -40,9 +40,14 @@ public class Pong implements Runnable {
 
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB); 
+        
+        
 
         menu = new Menu();
         campo = new UIField();
+        player = new Player(10, height / 2 - 20);
+        enemy = new Enemy(whidth - 20, height / 2 - 20);
+        ball = new Ball();
     
     }
 
@@ -52,6 +57,7 @@ public class Pong implements Runnable {
     public void update(){         
 
         menu.update();
+        ball.update();
        
        
        
@@ -74,6 +80,9 @@ public class Pong implements Runnable {
         
         campo.render(g);
         menu.render(g);
+        player.render(g);
+        enemy.render(g);
+        ball.render(g);
        
 
         g = bs.getDrawGraphics();

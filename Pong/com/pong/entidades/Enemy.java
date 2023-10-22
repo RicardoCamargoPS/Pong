@@ -16,6 +16,9 @@ public class Enemy extends GameObjects {
         front = new Color(255, 99, 71, 255);      
        
         this.vel = 3;
+
+        this.width = 10;
+        this.height = 50;
     }
 
     @Override
