@@ -12,16 +12,20 @@ public class UIScore{
 
     private Font font;
 
-    public UIScore(int px, int py, String text){
+    public UIScore(int px, int py){
         this.px = px;
         this.py = py;
-        this.text = text + " Score: ";
+        this.text = " 0 ";
 
-        font = new Font("Courier New", Font.PLAIN, 10);
+        font = new Font("Courier New", Font.PLAIN, 16);
     }
 
     public void increaseScore(){
         this.score++;
+    }
+
+    public void update(){
+        text = "" + score;       
     }
 
     public void render(Graphics g){

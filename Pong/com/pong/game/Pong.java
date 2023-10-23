@@ -28,7 +28,7 @@ public class Pong implements Runnable {
   
     public static Menu menu;
     public static UIField campo;
-    public UIScore playerScor;
+    public UIScore playerScore, enemyScore;
 
     public static Ball ball;
     public static Player player;
@@ -48,6 +48,9 @@ public class Pong implements Runnable {
         player = new Player(10, height / 2 - 20);
         enemy = new Enemy(whidth - 20, height / 2 - 20);
         ball = new Ball();
+
+        playerScore = new UIScore(20, 13);
+        enemyScore = new UIScore((whidth - 14) / 2 + 20, 13);
     
     }
 
@@ -58,6 +61,8 @@ public class Pong implements Runnable {
 
         menu.update();
         ball.update();
+        playerScore.update();
+        enemyScore.update();
        
        
        
@@ -83,6 +88,8 @@ public class Pong implements Runnable {
         player.render(g);
         enemy.render(g);
         ball.render(g);
+        playerScore.render(g);
+        enemyScore.render(g);
        
 
         g = bs.getDrawGraphics();
