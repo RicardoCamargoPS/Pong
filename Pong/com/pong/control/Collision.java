@@ -16,29 +16,20 @@ public class Collision {
 
     public void testCollision(GameObjects padle, Ball bola){
 
-        if(!isIntersecting(padle, bola)) return;
+        if(isIntersecting(padle, bola)){
+            Random random = new Random();
+            bola.setDy((random.nextBoolean()) ? 1 : -1);
 
-        Random random = new Random();
-       
+        } else
+            return;     
 
-        //double overLapLeft = bola.ladoDir() - padle.ladoEsq();
-        //double overLapRigth = padle.ladoDir() - bola.ladoEsq();
-        //double overlapTop = bola.ladoBaixo() - padle.ladoCima();
-		//double overlapBottom = padle.ladoBaixo() - bola.ladoCima();
+        if(bola.getPx() <= padle.getPx()){
+            bola.setDx(-1);  
+        }
+        if(bola.getPx() >= padle.getPx()){
+            bola.setDx(1);
 
-        //boolean ballFromLeft = overLapLeft < overLapRigth;
-        //boolean ballFromTop = overlapTop < overlapBottom;
-
-        bola.setDx((random.nextBoolean()) ? 1 : -1);
-
-        bola.setDy(-1);
-        /*
-        if(ballFromTop)
-            bola.setDy(ballFromTop ? -1 : 1);
-        else
-            bola.setDy(ballFromTop ? 1 : -1);
-        */
-
+        }
     }
 
 

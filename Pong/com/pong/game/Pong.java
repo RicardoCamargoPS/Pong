@@ -51,6 +51,7 @@ public class Pong implements Runnable {
 
         playerScore = new UIScore(20, 13);
         enemyScore = new UIScore((whidth - 14) / 2 + 20, 13);
+        collision = new Collision();
     
     }
 
@@ -63,6 +64,8 @@ public class Pong implements Runnable {
         ball.update();
         playerScore.update();
         enemyScore.update();
+        collision.testCollision(enemy, ball);
+        collision.testCollision(player, ball);
        
        
        

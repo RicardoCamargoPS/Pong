@@ -28,5 +28,9 @@ public abstract class GameObjects extends Rectangle {
     public int ladoBaixo(){
         return py + height;
     }
+
+    public int getPx(){
+        return px;
+    }
     
 }
