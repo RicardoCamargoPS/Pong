@@ -6,6 +6,7 @@ import com.pong.entidades.Ball;
 import com.pong.entidades.GameObjects;
 
 public class Collision {
+     Random random = new Random();
 
     boolean isIntersecting(GameObjects obj1, GameObjects obj2){
         return obj1.ladoDir() >= obj2.ladoEsq() &&
@@ -17,8 +18,8 @@ public class Collision {
     public void testCollision(GameObjects padle, Ball bola){
 
         if(isIntersecting(padle, bola)){
-            Random random = new Random();
-            bola.setDy((random.nextBoolean()) ? 1 : -1);
+           
+            bola.setDy((random.nextBoolean()) ? -1 : 1);
 
         } else
             return;     
@@ -31,9 +32,5 @@ public class Collision {
 
         }
     }
-
-
-
-
     
 }

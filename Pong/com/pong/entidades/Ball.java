@@ -9,7 +9,7 @@ import com.pong.game.Pong;
 public class Ball extends GameObjects{
 
     private int dx, dy;
-    private double vel = 3;
+    private double vel = 4;
     private int ray = 7;
 
     public Ball() {

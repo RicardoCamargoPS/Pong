@@ -49,8 +49,8 @@ public class Pong implements Runnable {
         enemy = new Enemy(whidth - 20, height / 2 - 20);
         ball = new Ball();
 
-        playerScore = new UIScore(20, 13);
-        enemyScore = new UIScore((whidth - 14) / 2 + 20, 13);
+        playerScore = new UIScore((whidth / 2 ) - 10 - 20, 13, 'e');
+        enemyScore = new UIScore((whidth / 2) - 10 + 20, 13, 'd');
         collision = new Collision();
     
     }
