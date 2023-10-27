@@ -24,16 +24,18 @@ public class Enemy extends GameObjects {
     @Override
     public void update(){
 
-        int dx = Pong.ball.getDx();
 
-        px += dx * vel;
-
-        if(ladoEsq() <= Pong.campo.getPx() + 3){
-            px = Pong.campo.getPx() + 3 ;
+        if(ladoCima() <= Pong.campo.getPy() + 3){
+            py = Pong.campo.getPy() + 3 ;
         }
-        else if(ladoDir() - 3  >= Pong.campo.getWidth()){
-            px = Pong.campo.getWidth() - width + 3;
-        }        
+        else if(ladoBaixo()  > Pong.campo.getHeight() + 10){
+            py = Pong.campo.getHeight() - height + 10;
+        }
+
+        int dy = Pong.ball.getDy();
+
+        py += dy * vel;
+
 
     }
     @Override

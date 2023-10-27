@@ -73,8 +73,8 @@ public class Ball extends GameObjects{
     public int getPx(){
         return px;
     }
-    public int getDx() {
-        return dx;
+    public int getDy() {
+        return dy;
     }
 
     public void setPosition(){

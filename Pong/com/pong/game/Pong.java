@@ -43,8 +43,8 @@ public class Pong implements Runnable {
                 
         menu = new Menu();
         campo = new UIField();
-        player = new Player(10, height / 2 - 20);
-        enemy = new Enemy(whidth - 20, height / 2 - 20);
+        player = new Player(6, height / 2 - 20);
+        enemy = new Enemy(whidth - 16, height / 2 - 20);
         ball = new Ball();
 
         playerScore = new UIScore((whidth - 10) / 2 - 20, 13, 'e');
@@ -56,7 +56,9 @@ public class Pong implements Runnable {
     public void update(){    
         
         if(gameStatos == "normal"){
-            
+
+            player.update(); 
+            enemy.update();           
             ball.update();
             playerScore.update();
             enemyScore.update();

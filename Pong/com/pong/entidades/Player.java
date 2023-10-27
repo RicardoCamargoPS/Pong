@@ -9,7 +9,7 @@ public class Player extends GameObjects {
 
     private Color back, front;
     private boolean isMuving = false;
-    private int dx = 0;
+    private int dy = 0;
     private int vel = 2;
 
 
@@ -25,14 +25,14 @@ public Player(int px, int py) {
     @Override
     public void update() {
 
-        if(ladoEsq() <= Pong.campo.getPx() + 3){
-            px = Pong.campo.getPx() + 3 ;
+        if(ladoCima() <= Pong.campo.getPy() + 3){
+            py = Pong.campo.getPy() + 3 ;
         }
-        else if(ladoDir() - 3  >= Pong.campo.getWidth()){
-            px = Pong.campo.getWidth() - width + 3;
+        else if(ladoBaixo()  > Pong.campo.getHeight() + 10){
+            py = Pong.campo.getHeight() - height + 10;
         }
         if(isMuving){
-            px += (int) dx * vel ;
+            py += (int) dy * vel ;
         }
     }
 
@@ -50,7 +50,7 @@ public Player(int px, int py) {
         this.isMuving = isMuving;
     }    
     public void mudaDir(int dir){
-        this.dx =  dir;
+        this.dy =  dir;
     }
     public int getPx(){
         return px;

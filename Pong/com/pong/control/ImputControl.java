@@ -9,13 +9,14 @@ public class ImputControl implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+		
         
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
 
-         if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			Pong.setGameStatos("dalay");	
 			if(Pong.getGameStatos().equals("menu")){
 				Pong.menu.enter = true;
@@ -39,11 +40,11 @@ public class ImputControl implements KeyListener {
 			}		
 		}
 
-		if(e.getKeyCode() == KeyEvent.VK_D) {	
+		if(e.getKeyCode() == KeyEvent.VK_S) {	
 			Pong.player.setMuving(true);
 			Pong.player.mudaDir(1);				
 		}
-		if(e.getKeyCode() == KeyEvent.VK_A) {	
+		if(e.getKeyCode() == KeyEvent.VK_W) {	
 			Pong.player.setMuving(true);
 			Pong.player.mudaDir(-1);		
 				 
@@ -56,15 +57,13 @@ public class ImputControl implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 
-        if(e.getKeyCode() == KeyEvent.VK_D) {
+        if(e.getKeyCode() == KeyEvent.VK_S) {
 			Pong.player.setMuving(false);
 			Pong.player.mudaDir(0);			
 		}
-		if(e.getKeyCode() == KeyEvent.VK_A) {
+		if(e.getKeyCode() == KeyEvent.VK_W) {
 			Pong.player.setMuving(false);
-			Pong.player.mudaDir(0);
-			
-				 
+			Pong.player.mudaDir(0);			 
 		}	
 	}
     
