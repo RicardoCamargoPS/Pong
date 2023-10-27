@@ -40,39 +40,41 @@ public class Pong implements Runnable {
 
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB); 
-        
-        
-
+                
         menu = new Menu();
         campo = new UIField();
         player = new Player(10, height / 2 - 20);
         enemy = new Enemy(whidth - 20, height / 2 - 20);
         ball = new Ball();
 
-        playerScore = new UIScore((whidth / 2 ) - 10 - 20, 13, 'e');
-        enemyScore = new UIScore((whidth / 2) - 10 + 20, 13, 'd');
+        playerScore = new UIScore((whidth - 10) / 2 - 20, 13, 'e');
+        enemyScore = new UIScore((whidth - 10) / 2 + 10, 13, 'd');
         collision = new Collision();
     
     }
 
+    public void update(){    
         
-    
+        if(gameStatos == "normal"){
+            
+            ball.update();
+            playerScore.update();
+            enemyScore.update();
+            collision.testCollision(enemy, ball);
+            collision.testCollision(player, ball);       
+        }
 
-    public void update(){         
+        if(gameStatos =="menu"){
+            menu.update();
+        }
 
-        menu.update();
-        ball.update();
-        playerScore.update();
-        enemyScore.update();
-        collision.testCollision(enemy, ball);
-        collision.testCollision(player, ball);
-       
-       
-       
-       
-       
+        if(gameStatos == "dalay"){
+            delay(1000);
+            gameStatos = "normal";
+        }
+        
     }
-    
+
     public void render(){
 
         BufferStrategy bs = window.getBufferStrategy();
@@ -84,17 +86,25 @@ public class Pong implements Runnable {
         Graphics g = layer.getGraphics();
         g.setColor(new Color(80, 80, 100, 255));
         g.fillRect(0, 0, whidth, height);
-        
+
         
         campo.render(g);
-        menu.render(g);
         player.render(g);
         enemy.render(g);
         ball.render(g);
         playerScore.render(g);
         enemyScore.render(g);
-       
 
+
+        if(gameStatos == "menu"){
+            menu.render(g);
+        }
+        
+
+        
+        
+
+        
         g = bs.getDrawGraphics();
         g.drawImage(layer, 0, 0, whidth * window.getEscala(), height * window.getEscala(), null);
 
@@ -120,12 +130,10 @@ public class Pong implements Runnable {
 			lastTime = nowTime;
 
 			if(deltaTime >= 1) {
+                render(); 
+                update();
 
-                render();	
-				update();
-				
-
-				deltaTime = 0;
+               	deltaTime = 0;
             }
         }
         

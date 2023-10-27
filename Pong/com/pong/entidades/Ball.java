@@ -80,13 +80,14 @@ public class Ball extends GameObjects{
     public void setPosition(){
 
 
-        int x = Pong.campo.getPx();
+       
         int y = Pong.campo.getPy();
         int width = Pong.campo.getWidth();
         int height = Pong.campo.getHeight();
 
-        this.px = x + width / 2 - 4;
+        this.px = width / 2 - 3;
         this.py = y + height / 2 - 4;
+        System.out.println(px);
     }
 
 }

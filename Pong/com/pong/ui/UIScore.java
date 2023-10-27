@@ -7,7 +7,7 @@ import java.awt.Graphics;
 public class UIScore{
 
     private String text = "";
-    private int score = 9;
+    private int score = 0;
     private int px, py;
     private char orientacao;
 
@@ -16,7 +16,7 @@ public class UIScore{
     public UIScore(int px, int py, char orientacao){
         this.px = px;
         this.py = py;
-        this.text = " 0 ";
+        this.text = "0";
         this.orientacao = orientacao;
 
         font = new Font("Courier New", Font.PLAIN, 16);
@@ -27,10 +27,7 @@ public class UIScore{
     }
 
     public void update(){
-        text = "" + score;     
-        increaseScore();
-        increaseScore();
-        increaseScore();
+        text = "" + score;      
         
     }
 
