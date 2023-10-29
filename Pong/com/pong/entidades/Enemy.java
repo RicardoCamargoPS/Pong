@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import com.pong.game.Pong;
 
 public class Enemy extends GameObjects {
+    
 
     private Color back, front;
 
