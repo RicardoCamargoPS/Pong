@@ -1,4 +1,5 @@
-Jogo classico Pong feito puramente em java
+#Jogo classico Pong
 
+##jogo Pong feito em java puro
 
-<img src="resurces/jogo pong.png" width = "600">
+![jogo pong](https://github.com/RicardoCamargoPS/Pong/blob/main/Pong/com/pong/resurces/jogo%20pong.png)
