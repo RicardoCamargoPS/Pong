@@ -7,9 +7,10 @@ import java.awt.image.BufferedImage;
 
 import com.pong.control.Collision;
 import com.pong.control.Window;
-import com.pong.entidades.Ball;
+import com.pong.entidades.Bola;
 import com.pong.entidades.Enemy;
 import com.pong.entidades.Player;
+import com.pong.entidades.Raquete;
 import com.pong.ui.Menu;
 import com.pong.ui.UIField;
 import com.pong.ui.UIScore;
@@ -29,10 +30,9 @@ public class Pong implements Runnable {
     public static Menu menu;
     public static UIField campo;
     public UIScore playerScore, enemyScore;
-
-    public static Ball ball;
-    public static Player player;
-    private Enemy enemy;
+    public static Raquete player;
+    public Raquete enemy;
+    public static Bola ball;  
     
 
 
@@ -43,9 +43,9 @@ public class Pong implements Runnable {
                 
         menu = new Menu();
         campo = new UIField();
-        player = new Player(6, height / 2 - 20);
-        enemy = new Enemy(whidth - 16, height / 2 - 20);
-        ball = new Ball();
+        player = new Raquete(6, height / 2 - 30, Color.blue, false);
+        enemy = new Raquete(whidth - 13, height / 2 - 30, Color.red, true);
+        ball = new Bola();
 
         playerScore = new UIScore((whidth - 10) / 2 - 20, 13, 'e');
         enemyScore = new UIScore((whidth - 10) / 2 + 10, 13, 'd');
@@ -86,7 +86,7 @@ public class Pong implements Runnable {
         }
 
         Graphics g = layer.getGraphics();
-        g.setColor(new Color(80, 80, 100, 255));
+        g.setColor(new Color(255, 255, 255, 255));
         g.fillRect(0, 0, whidth, height);
 
         
@@ -101,12 +101,7 @@ public class Pong implements Runnable {
         if(gameStatos == "menu"){
             menu.render(g);
         }
-        
-
-        
-        
-
-        
+                
         g = bs.getDrawGraphics();
         g.drawImage(layer, 0, 0, whidth * window.getEscala(), height * window.getEscala(), null);
 

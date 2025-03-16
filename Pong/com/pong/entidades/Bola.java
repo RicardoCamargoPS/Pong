@@ -6,13 +6,13 @@ import java.util.Random;
 
 import com.pong.game.Pong;
 
-public class Ball extends GameObjects{
+public class Bola extends GameObjects{
 
-    private int dx, dy;
-    private double vel = 4;
-    private int ray = 7;
+    public int dx, dy;
+    private double vel = 6;
+    private int ray = 9;
 
-    public Ball() {
+    public Bola() {
 
         Random random = new Random();
         dx = (random.nextBoolean()) ? 1 : -1;
@@ -30,16 +30,13 @@ public class Ball extends GameObjects{
 
         px += (int) dx * vel;
         py += (int) dy * vel;
-
         
 
         if(ladoDir()>= Pong.campo.getWidth()){
-            dx *= - 1;
-            
+            dx *= - 1;            
         }
         else if(ladoEsq() <= Pong.campo.getPx()){
             dx *= - 1;
-           
         }        
         
         if(ladoCima()  <= Pong.campo.getPy() ){
@@ -61,6 +58,8 @@ public class Ball extends GameObjects{
         g.fillOval(px + 2, py, ray - 3, ray - 3);
 
         
+
+        
        
     }
     public void setDx(int dx) {
@@ -77,10 +76,7 @@ public class Ball extends GameObjects{
         return dy;
     }
 
-    public void setPosition(){
-
-
-       
+    public void setPosition(){       
         int y = Pong.campo.getPy();
         int width = Pong.campo.getWidth();
         int height = Pong.campo.getHeight();
@@ -88,6 +84,12 @@ public class Ball extends GameObjects{
         this.px = width / 2 - 3;
         this.py = y + height / 2 - 4;
         System.out.println(px);
+    }
+
+    public void rotacionar(){
+        
+        
+         
     }
 
 }

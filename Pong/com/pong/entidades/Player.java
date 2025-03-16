@@ -10,7 +10,7 @@ public class Player extends GameObjects {
     private Color back, front;
     private boolean isMuving = false;
     private int dy = 0;
-    private int vel = 2;
+    private int vel = 3;
 
 
 public Player(int px, int py) {
@@ -19,7 +19,7 @@ public Player(int px, int py) {
     back = new Color(0, 0, 128, 255);
     front = new Color(65, 105, 225, 255);    
     this.width = 10;
-    this.height = 50;
+    this.height = 90;
 }
 
     @Override

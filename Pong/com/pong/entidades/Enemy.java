@@ -14,12 +14,11 @@ public class Enemy extends GameObjects {
         this.px = px;
         this.py = py;
         back = new Color(139, 54, 38, 255);
-        front = new Color(255, 99, 71, 255);      
-       
+        front = new Color(255, 99, 71, 255);        
         this.vel = 3;
 
         this.width = 10;
-        this.height = 50;
+        this.height = 60;
     }
 
     @Override
