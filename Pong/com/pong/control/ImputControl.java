@@ -20,7 +20,10 @@ public class ImputControl implements KeyListener {
 			Pong.setGameStatos("dalay");	
 			if(Pong.getGameStatos().equals("menu")){
 				Pong.menu.enter = true;
-			}			
+			}
+			if(Pong.getGameStatos().equals("opcaoMenu")){
+				Pong.menu.enter = true;
+			}				
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {			

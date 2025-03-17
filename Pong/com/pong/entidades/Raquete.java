@@ -6,7 +6,7 @@ import com.pong.game.Pong;
 
 public class Raquete extends GameObjects {
 
-    private Color back, front;
+    private Color cor;
     private boolean isMuving = false;
     private int dy = 0;
     private int vel = 3;
@@ -15,7 +15,7 @@ public class Raquete extends GameObjects {
     public Raquete(int px, int py, Color cor, boolean movi_IA) {
         this.px = px;
         this.py = py;
-        back = cor;
+        this.cor = cor;
         // back = new Color(0, 0, 128, 255);
         // front = new Color(65, 105, 225, 255);
         this.width = 7;
@@ -50,11 +50,8 @@ public class Raquete extends GameObjects {
     @Override
     public void render(Graphics g) {
 
-        g.setColor(back);
+        g.setColor(cor);
         g.fillRect(px, py, width, height);
-
-        // g.setColor(front);
-        // g.fillRect(px + 2, py + 2, width - 4, height - 4);
 
     }
 

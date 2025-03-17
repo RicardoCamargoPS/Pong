@@ -8,8 +8,6 @@ import java.awt.image.BufferedImage;
 import com.pong.control.Collision;
 import com.pong.control.Window;
 import com.pong.entidades.Bola;
-import com.pong.entidades.Enemy;
-import com.pong.entidades.Player;
 import com.pong.entidades.Raquete;
 import com.pong.ui.Menu;
 import com.pong.ui.UIField;
@@ -86,7 +84,7 @@ public class Pong implements Runnable {
         }
 
         Graphics g = layer.getGraphics();
-        g.setColor(new Color(255, 255, 255, 255));
+        g.setColor(new Color(80, 80, 100, 255));
         g.fillRect(0, 0, whidth, height);
 
         
