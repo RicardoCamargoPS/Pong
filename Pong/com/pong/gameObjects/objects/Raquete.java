@@ -1,8 +1,9 @@
-package com.pong.entidades;
+package com.pong.gameObjects.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import com.pong.game.Pong;
+import com.pong.gameObjects.GameObjects;
 
 public class Raquete extends GameObjects {
 

@@ -1,14 +1,12 @@
-package com.pong.entidades;
+package com.pong.gameObjects;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public abstract class GameObjects extends Rectangle {
 
     protected int px, py, width, height;
-    protected Color backColor, frontColor;
-    protected double vel = 2;
+    protected boolean temColisao;  
     
 
     abstract public void update();

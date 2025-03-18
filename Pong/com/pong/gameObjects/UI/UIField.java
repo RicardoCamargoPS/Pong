@@ -1,4 +1,4 @@
-package com.pong.ui;
+package com.pong.gameObjects.UI;
 
 import java.awt.Color;
 import java.awt.Graphics;

@@ -1,7 +1,7 @@
 package com.pong.control;
 
-import com.pong.entidades.Bola;
-import com.pong.entidades.GameObjects;
+import com.pong.gameObjects.GameObjects;
+import com.pong.gameObjects.objects.Bola;
 public class Collision {
 
     boolean isIntersecting(GameObjects obj1, GameObjects obj2) {

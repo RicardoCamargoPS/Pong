@@ -7,11 +7,11 @@ import java.awt.image.BufferedImage;
 
 import com.pong.control.Collision;
 import com.pong.control.Window;
-import com.pong.entidades.Bola;
-import com.pong.entidades.Raquete;
-import com.pong.ui.Menu;
-import com.pong.ui.UIField;
-import com.pong.ui.UIScore;
+import com.pong.gameObjects.UI.Menu;
+import com.pong.gameObjects.UI.UIField;
+import com.pong.gameObjects.UI.UIScore;
+import com.pong.gameObjects.objects.Bola;
+import com.pong.gameObjects.objects.Raquete;
 
 public class Pong implements Runnable {
 

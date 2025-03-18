@@ -1,10 +1,11 @@
-package com.pong.entidades;
+package com.pong.gameObjects.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
 import com.pong.game.Pong;
+import com.pong.gameObjects.GameObjects;
 
 public class Bola extends GameObjects{
 

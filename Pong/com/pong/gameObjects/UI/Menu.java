@@ -1,4 +1,4 @@
-package com.pong.ui;
+package com.pong.gameObjects.UI;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,7 +6,8 @@ import java.awt.Graphics;
 
 import com.pong.game.Pong;
 
-public class OpcaoMenu {
+public class Menu {
+
     private int px =  (Pong.getWhidth() - 10) / 2;
     private int py = 200;
     
@@ -14,10 +15,10 @@ public class OpcaoMenu {
 
     private int[] options = {0, 1, 2, 3 };
 
-    // 0 = Numero de partidas
-    // 1 = Tempo das partidas
-    // 2 = Volume do jogo 
-    // 3 = Voltar
+    // 0 = Novo Jogo  ou   Continuar  * se o jogo estiver pausado *
+    // 1 = Carregar Jogo
+    // 2 = Opições 
+    // 3 = Sair
 
     private int currentOpitions = 0;
     private int maxOptions = options.length - 1;
@@ -49,6 +50,10 @@ public class OpcaoMenu {
                
             }
             else if(options[currentOpitions] == 3){
+                Pong.setGameStatos("opcaoMenu");
+                
+            }
+            else if(options[currentOpitions] == 3){
                 System.exit(1);
             }
 
@@ -60,14 +65,20 @@ public class OpcaoMenu {
         g.setColor(Color.white);
         g.setFont(new Font("arial", Font.ITALIC, 14));   
         
-        g.drawString("> Configuração <", px - 29, py - 160);
+        g.drawString("> Pong <", px - 29, py - 160);
 
         g.setColor(Color.white);
-        g.setFont(new Font("Courier New", Font.BOLD, 12)); 
+        g.setFont(new Font("Courier New", Font.BOLD, 12));      
+
+        if(paused == false)
+            g.drawString("Novo Jogo", px - 31, py - 120);
         
-        g.drawString("Partidas", px - 29, py - 120);
-        g.drawString("Volume", px - 29, py - 100);
-        g.drawString("Voltar", px - 29, py - 80);
+        else
+            g.drawString("Continuar", px - 31, py * 120);
+
+        g.drawString("Carregar Jogo", px - 44, py - 100);
+        g.drawString("Opções", px - 20, py - 80);
+        g.drawString("Sair", px - 13, py - 60);
 
         g.setColor(new Color(50, 200, 50, 255));
 
@@ -86,5 +97,6 @@ public class OpcaoMenu {
 
         
     }
+
 
 }

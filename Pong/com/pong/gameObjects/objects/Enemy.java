@@ -1,14 +1,16 @@
-package com.pong.entidades;
+package com.pong.gameObjects.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 import com.pong.game.Pong;
+import com.pong.gameObjects.GameObjects;
 
 public class Enemy extends GameObjects {
     
 
     private Color back, front;
+    private int vel = 3;
 
     public Enemy(int px, int py) {
         this.px = px;
