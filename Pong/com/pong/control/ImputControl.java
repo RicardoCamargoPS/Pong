@@ -17,29 +17,59 @@ public class ImputControl implements KeyListener {
     public void keyPressed(KeyEvent e) {
 
         if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-			Pong.setGameStatos("dalay");	
+			
 			if(Pong.getGameStatos().equals("menu")){
-				Pong.menu.enter = true;
+				if (Pong.menu.getStatus() == 1) {
+					Pong.menu.opcao.enter = true;					
+				}
+				else{
+					Pong.menu.menu.enter = true;
+				}
+				
 			}
-			if(Pong.getGameStatos().equals("opcaoMenu")){
-				Pong.menu.enter = true;
-			}				
+			else if(Pong.getGameStatos().equals("paused")){
+				Pong.menu.pause.enter = true;	
+			}
+			
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {			
-			Pong.setGameStatos("menu");
-			Pong.menu.paused = true;
+			Pong.setGameStatos("paused");
+			
 		}		
 
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
 			if(Pong.getGameStatos().equals("menu")){
-				Pong.menu.up = true;
-			}	
+
+				if (Pong.menu.getStatus() == 0) {
+					Pong.menu.menu.up = true;
+				}
+				else if (Pong.menu.getStatus() == 1){
+					Pong.menu.opcao.up = true;	
+					
+				}
+				
+			}
+			else if( Pong.getGameStatos().equals("paused")){
+				Pong.menu.pause.up = true;
+			
+			}
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			if(Pong.getGameStatos().equals("menu")){
-				Pong.menu.down = true;				
+				if (Pong.menu.getStatus() == 0) {
+					Pong.menu.menu.down = true;
+				}
+				else if (Pong.menu.getStatus() == 1){
+					Pong.menu.opcao.down = true;	
+					
+				}
+				
+			}
+			else if( Pong.getGameStatos().equals("paused")){
+				Pong.menu.pause.down = true;
+			
 			}		
 		}
 

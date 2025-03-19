@@ -6,8 +6,8 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import com.pong.control.Collision;
+import com.pong.control.MenuControle;
 import com.pong.control.Window;
-import com.pong.gameObjects.UI.Menu;
 import com.pong.gameObjects.UI.UIField;
 import com.pong.gameObjects.UI.UIScore;
 import com.pong.gameObjects.objects.Bola;
@@ -25,7 +25,7 @@ public class Pong implements Runnable {
     private Collision collision;
 
   
-    public static Menu menu;
+    public static MenuControle menu;
     public static UIField campo;
     public UIScore playerScore, enemyScore;
     public static Raquete player;
@@ -39,7 +39,7 @@ public class Pong implements Runnable {
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB); 
                 
-        menu = new Menu();
+        menu = new MenuControle();
         campo = new UIField();
         player = new Raquete(6, height / 2 - 30, Color.blue, false);
         enemy = new Raquete(whidth - 13, height / 2 - 30, Color.red, true);
@@ -65,6 +65,10 @@ public class Pong implements Runnable {
         }
 
         if(gameStatos =="menu"){
+            menu.update();
+        }
+        if(gameStatos =="paused"){
+            menu.setMenu(2);
             menu.update();
         }
 
@@ -99,6 +103,10 @@ public class Pong implements Runnable {
         if(gameStatos == "menu"){
             menu.render(g);
         }
+        if(gameStatos =="paused"){
+            menu.render(g);
+        }
+
                 
         g = bs.getDrawGraphics();
         g.drawImage(layer, 0, 0, whidth * window.getEscala(), height * window.getEscala(), null);

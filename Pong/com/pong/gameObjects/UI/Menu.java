@@ -13,12 +13,11 @@ public class Menu {
     
     
 
-    private int[] options = {0, 1, 2, 3 };
+    private int[] options = {0, 1, 2};
 
-    // 0 = Novo Jogo  ou   Continuar  * se o jogo estiver pausado *
-    // 1 = Carregar Jogo
-    // 2 = Opições 
-    // 3 = Sair
+    // 0 = Novo Jogo   
+    // 1 = Opições 
+    // 2 = Sair
 
     private int currentOpitions = 0;
     private int maxOptions = options.length - 1;
@@ -49,11 +48,12 @@ public class Menu {
                 paused = false;
                
             }
-            else if(options[currentOpitions] == 3){
-                Pong.setGameStatos("opcaoMenu");
+            else if(options[currentOpitions] == 1){
+                Pong.menu.setMenu(1);
+                Pong.setGameStatos("menu");               
                 
             }
-            else if(options[currentOpitions] == 3){
+            else if(options[currentOpitions] == 2){
                 System.exit(1);
             }
 
@@ -68,17 +68,11 @@ public class Menu {
         g.drawString("> Pong <", px - 29, py - 160);
 
         g.setColor(Color.white);
-        g.setFont(new Font("Courier New", Font.BOLD, 12));      
+        g.setFont(new Font("Courier New", Font.BOLD, 12));  
 
-        if(paused == false)
-            g.drawString("Novo Jogo", px - 31, py - 120);
-        
-        else
-            g.drawString("Continuar", px - 31, py * 120);
-
-        g.drawString("Carregar Jogo", px - 44, py - 100);
-        g.drawString("Opções", px - 20, py - 80);
-        g.drawString("Sair", px - 13, py - 60);
+        g.drawString("Novo Jogo", px - 31, py - 120);       
+        g.drawString("Opções", px - 31, py - 100);
+        g.drawString("Sair", px - 31, py - 80);
 
         g.setColor(new Color(50, 200, 50, 255));
 
@@ -86,16 +80,12 @@ public class Menu {
             g.drawString(">", px - 50, py - 120);
         }
         else if(options[currentOpitions] == 1){
-             g.drawString(">", px - 60, py - 100);
+             g.drawString(">", px - 50, py - 100);
         }
         else if(options[currentOpitions] == 2){
-             g.drawString(">", px - 44, py - 80);
+             g.drawString(">", px - 50, py - 80);
         }
-         else if(options[currentOpitions] == 3){
-             g.drawString(">", px - 35, py - 60);
-        }
-
-        
+                 
     }
 
 
