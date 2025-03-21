@@ -61,12 +61,10 @@ public class PauseMenu {
     public void render(Graphics g){
 
         g.setColor(Color.white);
-        g.setFont(new Font("arial", Font.ITALIC, 14));   
-        
+        g.setFont(new Font("arial", Font.ITALIC, 14));          
         g.drawString("> Pause <", px - 29, py - 160);
 
-        g.setColor(Color.white);
-        g.setFont(new Font("Courier New", Font.BOLD, 12));      
+        g.setFont(new Font("Courier New", Font.PLAIN, 12));      
 
         
         g.drawString("Continuar", px - 31, py - 120);

@@ -68,7 +68,7 @@ public class Menu {
         g.drawString("> Pong <", px - 29, py - 160);
 
         g.setColor(Color.white);
-        g.setFont(new Font("Courier New", Font.BOLD, 12));  
+        g.setFont(new Font("Courier New", Font.PLAIN, 12));  
 
         g.drawString("Novo Jogo", px - 31, py - 120);       
         g.drawString("Opções", px - 31, py - 100);
