@@ -9,7 +9,7 @@ import com.pong.game.Pong;
 public class OpcaoMenu {
     private int px =  (Pong.getWhidth() - 10) / 2;
     private int py = 200;
-    private int volume, partidas = 1, tempo;
+    private int volume = 50, partidas = 1, tempo = 2;
    
     
     
@@ -23,7 +23,7 @@ public class OpcaoMenu {
 
     private int currentOpitions = 0;
     private int maxOptions = options.length - 1;
-    public boolean up, down, enter;
+    public boolean up, down, left, rigth, enter;
 
     public boolean paused = false;
 
@@ -42,6 +42,60 @@ public class OpcaoMenu {
                 currentOpitions = 0;
 
         }
+        if(rigth){
+            rigth = false;
+            switch (currentOpitions) {
+                case 0:
+                if(partidas < 5){
+                    partidas++;                    
+                }                
+                break;
+
+                case 1:
+                if(tempo < 20){
+                    tempo += 2;
+                }
+                break;
+
+                case 2:
+                if (volume < 100) {
+                    volume++;                    
+                }
+                break;
+                default:
+                break;
+
+            
+            }
+
+        }
+        if(left){
+            left = false;
+            switch (currentOpitions) {
+                case 0:
+                if(partidas > 1){
+                    partidas--;                    
+                }                
+                break;
+
+                case 1:
+                if(tempo > 2){
+                    tempo -= 2;
+                }
+                break;
+
+                case 2:
+                if (volume > 1) {
+                    volume--;                    
+                }
+                break;
+                default:
+                break;
+
+            }
+
+            
+        }
 
         if(enter){
             enter = false;
@@ -51,7 +105,7 @@ public class OpcaoMenu {
                
             }
             else if(options[currentOpitions] == 3){
-                System.exit(1);
+                Pong.menu.setMenu(0);
             }
 
         }
@@ -65,15 +119,25 @@ public class OpcaoMenu {
 
         g.setFont(new Font("Courier New", Font.PLAIN, 12)); 
         
-        g.drawString("Partidas", px - 55, py - 120);
+        g.drawString("Partidas", px - 55, py - 120);        
         g.drawString("" + partidas, px + 35, py - 120);
 
         g.drawString("Tempo", px - 55, py - 100);
-        g.drawString("" + tempo, px + 35, py - 100);
-
+        if (tempo < 10) {
+            g.drawString("" + tempo, px + 35, py - 100);
+        }else if (tempo >= 10) {
+            g.drawString("" + tempo, px + 31, py - 100);
+        }
         g.drawString("Volume", px - 55, py - 80);
-        g.drawString("" + volume, px + 35, py - 80);
-
+        if (volume < 10) {
+            g.drawString("" + volume, px + 35, py - 80);
+        }else if (volume >= 10 & volume <= 99) {
+            g.drawString("" + volume, px + 31, py - 80);
+        }
+        else if (volume == 100 ) {
+            g.drawString("" + volume, px + 28, py - 80);
+        }
+        
         g.drawString("Voltar", px - 30, py - 40);
 
         g.setColor(new Color(50, 200, 50, 255));

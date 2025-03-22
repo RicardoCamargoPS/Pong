@@ -36,7 +36,15 @@ public class ImputControl implements KeyListener {
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {			
 			Pong.setGameStatos("paused");
 			
-		}		
+		}
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {			
+			Pong.menu.opcao.left = true;
+			
+		}
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {			
+			Pong.menu.opcao.rigth = true;
+			
+		}			
 
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
 			if(Pong.getGameStatos().equals("menu")){
