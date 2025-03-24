@@ -41,7 +41,9 @@ public class PauseMenu {
         if(enter){
             enter = false;
             if(options[currentOpitions] == 0) {
-                
+                Pong.setGameStatos("normal");
+                Pong.setDelay();
+
                
             }
             else if(options[currentOpitions] == 1){
@@ -49,6 +51,8 @@ public class PauseMenu {
                 
             }
             else if(options[currentOpitions] == 2){
+                Pong.setGameStatos("menu");
+                Pong.menu.setMenu(1);
                 
             }
             else if(options[currentOpitions] == 3){

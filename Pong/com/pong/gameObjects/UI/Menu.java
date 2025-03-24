@@ -44,8 +44,8 @@ public class Menu {
         if(enter){
             enter = false;
             if(options[currentOpitions] == 0) {
-                Pong.setGameStatos("normal");                
-                paused = false;
+                Pong.setGameStatos("normal");
+                Pong.setDelay();                                 
                
             }
             else if(options[currentOpitions] == 1){

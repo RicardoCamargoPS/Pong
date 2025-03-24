@@ -71,13 +71,10 @@ public class Pong implements Runnable {
             menu.setMenu(2);
             menu.update();
         }
-
-        if(gameStatos == "dalay"){
-            delay(1000);
-            gameStatos = "normal";
-        }
         
     }
+
+    
 
     public void render(){
 
@@ -100,12 +97,9 @@ public class Pong implements Runnable {
         enemyScore.render(g);
 
 
-        if(gameStatos == "menu"){
+        if(gameStatos == "menu" || gameStatos == "paused"){
             menu.render(g);
-        }
-        if(gameStatos =="paused"){
-            menu.render(g);
-        }
+        }       
 
                 
         g = bs.getDrawGraphics();
@@ -153,12 +147,16 @@ public class Pong implements Runnable {
         
     }
 
-    public void delay(int milliseconds) {
+    public static void delay(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void setDelay(){
+        delay(1000);
     }
 
     public static int getHeight() {
