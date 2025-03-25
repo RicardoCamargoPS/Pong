@@ -34,21 +34,15 @@ public class Pong implements Runnable {
     
 
 
-    public Pong() {       
+    public Pong() { 
 
         window = new Window("Pong", whidth, height);
-        layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB); 
-                
+        layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB);
         menu = new MenuControle();
         campo = new UIField();
-        player = new Raquete(6, height / 2 - 30, Color.blue, false);
-        enemy = new Raquete(whidth - 13, height / 2 - 30, Color.red, true);
-        ball = new Bola();
-
         playerScore = new UIScore((whidth - 10) / 2 - 20, 13, 'e');
         enemyScore = new UIScore((whidth - 10) / 2 + 10, 13, 'd');
-        collision = new Collision();
-    
+        //newGame();
     }
 
     public void update(){    
@@ -73,9 +67,7 @@ public class Pong implements Runnable {
         }
         
     }
-
     
-
     public void render(){
 
         BufferStrategy bs = window.getBufferStrategy();
@@ -147,7 +139,7 @@ public class Pong implements Runnable {
         
     }
 
-    public static void delay(int milliseconds) {
+    public void delay(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
@@ -155,8 +147,21 @@ public class Pong implements Runnable {
         }
     }
 
-    public static void setDelay(){
+    public void setDelay(){
         delay(1000);
+    }
+
+    public void newGame(){                       
+       
+        player = new Raquete(6, height / 2 - 30, Color.blue, false);
+        enemy = new Raquete(whidth - 13, height / 2 - 30, Color.red, true);
+        ball = new Bola();        
+        collision = new Collision();
+
+    }
+
+    public void resetGame(){
+        newGame();
     }
 
     public static int getHeight() {
