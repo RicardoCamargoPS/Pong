@@ -5,12 +5,12 @@ import java.awt.Graphics;
 
 import com.pong.game.Pong;
 
-public class UIField {
+public class Campo {
 
     private int whidth, height;
     private int px = 5, py = 15;
 
-    public UIField() {
+    public Campo() {
 
         whidth = Pong.getWhidth() - 10;
         height = Pong.getHeight() - 20;

@@ -8,29 +8,13 @@ import java.awt.image.BufferedImage;
 import com.pong.control.Collision;
 import com.pong.control.MenuControle;
 import com.pong.control.Window;
-import com.pong.gameObjects.UI.UIField;
+import com.pong.gameObjects.UI.Campo;
 import com.pong.gameObjects.UI.UIScore;
 import com.pong.gameObjects.objects.Bola;
 import com.pong.gameObjects.objects.Raquete;
 
 public class Pong implements Runnable {
 
-    private Window window;
-    private Thread thread;
-    private BufferedImage layer;
-    private boolean isRunning = false;
-    private static int whidth = 400, height = 200;
-    private static String gameStatos = "menu";
-
-    private Collision collision;
-
-  
-    public static MenuControle menu;
-    public static UIField campo;
-    public UIScore playerScore, enemyScore;
-    public static Raquete player;
-    public Raquete enemy;
-    public static Bola ball;  
     
 
 
@@ -38,34 +22,12 @@ public class Pong implements Runnable {
 
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB);
-        menu = new MenuControle();
-        campo = new UIField();
-        playerScore = new UIScore((whidth - 10) / 2 - 20, 13, 'e');
-        enemyScore = new UIScore((whidth - 10) / 2 + 10, 13, 'd');
-        //newGame();
+        
     }
 
     public void update(){    
         
-        if(gameStatos == "normal"){
-
-            player.update(); 
-            enemy.update();           
-            ball.update();
-            playerScore.update();
-            enemyScore.update();
-            collision.testCollision(enemy, ball);
-            collision.testCollision(player, ball);       
-        }
-
-        if(gameStatos =="menu"){
-            menu.update();
-        }
-        if(gameStatos =="paused"){
-            menu.setMenu(2);
-            menu.update();
-        }
-        
+       
     }
     
     public void render(){
@@ -80,18 +42,6 @@ public class Pong implements Runnable {
         g.setColor(new Color(80, 80, 100, 255));
         g.fillRect(0, 0, whidth, height);
 
-        
-        campo.render(g);
-        player.render(g);
-        enemy.render(g);
-        ball.render(g);
-        playerScore.render(g);
-        enemyScore.render(g);
-
-
-        if(gameStatos == "menu" || gameStatos == "paused"){
-            menu.render(g);
-        }       
 
                 
         g = bs.getDrawGraphics();
@@ -150,32 +100,4 @@ public class Pong implements Runnable {
     public void setDelay(){
         delay(1000);
     }
-
-    public void newGame(){                       
-       
-        player = new Raquete(6, height / 2 - 30, Color.blue, false);
-        enemy = new Raquete(whidth - 13, height / 2 - 30, Color.red, true);
-        ball = new Bola();        
-        collision = new Collision();
-
-    }
-
-    public void resetGame(){
-        newGame();
-    }
-
-    public static int getHeight() {
-        return height;
-    }
-    public static int getWhidth() {
-        return whidth;
-    }
-
-    public static String getGameStatos() {
-        return gameStatos;
-    }
-    public static void setGameStatos(String gameStatos) {
-        Pong.gameStatos = gameStatos;
-    }
-    
 }

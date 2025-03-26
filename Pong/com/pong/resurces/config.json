@@ -1,0 +1,39 @@
+[
+    {
+        "objeto": "Game",
+        "largura": 400,
+        "altura": 200
+    },
+    
+    {
+        "objeto": "Campo",
+        "largura": 380,
+        "altura": 180
+    },
+    
+    {
+        "objeto": "player",
+        "largura": 10,
+        "altura": 50,
+        "px": 11,
+        "py": 65,
+        "cor": "azul"
+    },
+    
+    {
+        "objeto": "inimigo",
+        "largura": 10,
+        "altura": 50,
+        "px": 169,
+        "py": 65,
+        "cor": "vermelho"
+    },
+    
+    {
+        "objeto": "bola",
+        "diametro": 7,
+        "px": 147,
+        "py": 87,
+        "cor": "amarela"
+    }
+]
