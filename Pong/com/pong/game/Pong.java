@@ -7,7 +7,6 @@ import java.awt.image.BufferedImage;
 
 import com.pong.control.Collision;
 import com.pong.control.MenuControle;
-import com.pong.control.Window;
 import com.pong.gameObjects.UI.Campo;
 import com.pong.gameObjects.UI.UIScore;
 import com.pong.gameObjects.objects.Bola;

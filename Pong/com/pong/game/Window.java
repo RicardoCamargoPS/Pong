@@ -1,10 +1,12 @@
-package com.pong.control;
+package com.pong.game;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
+
+import com.pong.control.ImputControl;
 
 public class Window {
 
