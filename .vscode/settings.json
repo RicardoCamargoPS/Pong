@@ -1,3 +1,9 @@
 {
-    "terminal.explorerKind": "external"
+    "terminal.explorerKind": "external",
+    "java.project.sourcePaths": [
+        "Pong"
+    ],
+    "java.project.referencedLibraries": [
+        "Pong\\com\\pong\\resurces\\gson-2.12.1.jar"
+    ]
 }
