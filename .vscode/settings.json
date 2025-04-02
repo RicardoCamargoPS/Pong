@@ -4,6 +4,7 @@
         "Pong"
     ],
     "java.project.referencedLibraries": [
-        "Pong\\com\\pong\\resurces\\gson-2.12.1.jar"
+        "Pong\\com\\pong\\resurces\\gson-2.12.1.jar",
+        "test-lib\\**\\*.jar"
     ]
 }

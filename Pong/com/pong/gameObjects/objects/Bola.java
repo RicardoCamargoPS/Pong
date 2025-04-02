@@ -6,14 +6,18 @@ import java.util.Random;
 
 import com.pong.game.Pong;
 import com.pong.gameObjects.GameObjects;
+import com.pong.gameObjects.UI.Campo;
 
 public class Bola extends GameObjects{
 
     public int dx, dy;
     private double vel = 6;
     private int ray = 9;
+    private int campoLargura;
 
     public Bola() {
+
+        campoLargura = Campo.getLargura();
 
         Random random = new Random();
         dx = (random.nextBoolean()) ? 1 : -1;
@@ -33,7 +37,7 @@ public class Bola extends GameObjects{
         py += (int) dy * vel;
         
 
-        if(ladoDir()>= Pong.campo.getWidth()){
+        if(ladoDir()>= campoLargura){
             dx *= - 1;            
         }
         else if(ladoEsq() <= Pong.campo.getPx()){
