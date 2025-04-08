@@ -4,21 +4,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-
-import com.pong.control.Collision;
-import com.pong.control.MenuControle;
-import com.pong.gameObjects.UI.Campo;
-import com.pong.gameObjects.UI.UIScore;
-import com.pong.gameObjects.objects.Bola;
-import com.pong.gameObjects.objects.Raquete;
+import com.pong.control.GameInitComponent;
 
 public class Pong implements Runnable {
 
+    private Window window;
+    private BufferedImage layer;
+    private int whidth, height;
+    private boolean isRunning = true;
+    private Thread thread;
     
 
 
     public Pong() { 
-
+        setInitComponentValue();
         window = new Window("Pong", whidth, height);
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB);
         
@@ -98,5 +97,13 @@ public class Pong implements Runnable {
 
     public void setDelay(){
         delay(1000);
+    }
+
+    private void setInitComponentValue(){
+        whidth = GameInitComponent.getGameLargura();
+        height = GameInitComponent.getGameAltura();
+
+
+
     }
 }

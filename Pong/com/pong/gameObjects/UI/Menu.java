@@ -4,14 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+import com.pong.control.GameInitComponent;
 import com.pong.game.Pong;
+import com.pong.gameObjects.GameObjects;
 
-public class Menu {
-
-    private int px =  (Pong.getWhidth() - 10) / 2;
-    private int py = 200;
-    
-    
+public class Menu extends GameObjects {    
 
     private int[] options = {0, 1, 2};
 
@@ -86,6 +83,11 @@ public class Menu {
              g.drawString(">", px - 50, py - 80);
         }
                  
+    }
+
+     private void setInitComponentValue(){
+        px = GameInitComponent.getGameLargura() - 10 / 2;
+        py = 200;
     }
 
 
