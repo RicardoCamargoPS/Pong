@@ -2,8 +2,8 @@ package com.pong.control;
 
 public class GameInitComponent{
 
-    private static int largura;
-    private static int altura;
+    private static int largura = 400;
+    private static int altura = 200;
     private static int campoLarg, campoAltu;
     private static int jogadorLarg, jogadorAltu, jogadorPX, jogadorPY;
     private static int inimigoLarg, inimigoAltu, inimigoPX, inimigoPY;

@@ -3,8 +3,6 @@ package com.pong.gameObjects.objects;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
-
-import com.pong.game.Pong;
 import com.pong.gameObjects.GameObjects;
 import com.pong.gameObjects.UI.Campo;
 
@@ -13,11 +11,14 @@ public class Bola extends GameObjects{
     public int dx, dy;
     private double vel = 6;
     private int ray = 9;
-    private int campoLargura;
+    private int campoLargura, campoPX, campoPY, campoALtura;
 
     public Bola() {
 
         campoLargura = Campo.getLargura();
+        campoPX = Campo.getPx();
+        campoPY = Campo.getPy();
+        campoALtura = Campo.getAltura();
 
         Random random = new Random();
         dx = (random.nextBoolean()) ? 1 : -1;
@@ -40,14 +41,14 @@ public class Bola extends GameObjects{
         if(ladoDir()>= campoLargura){
             dx *= - 1;            
         }
-        else if(ladoEsq() <= Pong.campo.getPx()){
+        else if(ladoEsq() <= campoPX){
             dx *= - 1;
         }        
         
-        if(ladoCima()  <= Pong.campo.getPy() ){
+        if(ladoCima()  <= campoPY ){
             dy *= - 1;
         }        
-        else if(ladoBaixo() > Pong.campo.getHeight() + Pong.campo.getPy()){
+        else if(ladoBaixo() > campoALtura + campoPY){
             dy *= -1;
         }
         
@@ -82,13 +83,12 @@ public class Bola extends GameObjects{
     }
 
     public void setPosition(){       
-        int y = Pong.campo.getPy();
-        int width = Pong.campo.getWidth();
-        int height = Pong.campo.getHeight();
+        int y = campoPY;
+        int width = campoLargura;
+        int height = campoALtura;
 
         this.px = width / 2 - 3;
         this.py = y + height / 2 - 4;
-        System.out.println(px);
     }
 
     public void rotacionar(){

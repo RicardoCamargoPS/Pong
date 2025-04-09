@@ -5,14 +5,22 @@ import java.awt.Graphics;
 
 import com.pong.game.Pong;
 import com.pong.gameObjects.GameObjects;
+import com.pong.gameObjects.UI.Campo;
 
 public class Enemy extends GameObjects {
     
+    private int campoPY, campoALtura;
+
 
     private Color back, front;
     private int vel = 3;
 
     public Enemy(int px, int py) {
+        
+        campoPY = Campo.getPy();
+        campoALtura = Campo.getAltura();
+
+
         this.px = px;
         this.py = py;
         back = new Color(139, 54, 38, 255);
@@ -27,14 +35,14 @@ public class Enemy extends GameObjects {
     public void update(){
 
 
-        if(ladoCima() <= Pong.campo.getPy() + 3){
-            py = Pong.campo.getPy() + 3 ;
+        if(ladoCima() <= campoPY + 3){
+            py = campoPY + 3 ;
         }
-        else if(ladoBaixo()  > Pong.campo.getHeight() + 10){
-            py = Pong.campo.getHeight() - height + 10;
+        else if(ladoBaixo()  > campoALtura + 10){
+            py = campoALtura - height + 10;
         }
 
-        int dy = Pong.ball.getDy();
+        int dy = Pong.bola.getDy();
 
         py += dy * vel;
 

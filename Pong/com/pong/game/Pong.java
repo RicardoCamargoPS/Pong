@@ -5,6 +5,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import com.pong.control.GameInitComponent;
+import com.pong.control.MenuControle;
+import com.pong.gameObjects.objects.Bola;
+import com.pong.gameObjects.objects.Player;
 
 public class Pong implements Runnable {
 
@@ -13,13 +16,22 @@ public class Pong implements Runnable {
     private int whidth, height;
     private boolean isRunning = true;
     private Thread thread;
+    private static String status = "menu";
+
+    public static MenuControle menu;
+    public static Player player;
+    public static Bola bola;
     
 
 
     public Pong() { 
         setInitComponentValue();
         window = new Window("Pong", whidth, height);
+        //menu = new MenuControle();
+
         layer = new BufferedImage(whidth, height, BufferedImage.TYPE_INT_RGB);
+
+        
         
     }
 
@@ -102,8 +114,12 @@ public class Pong implements Runnable {
     private void setInitComponentValue(){
         whidth = GameInitComponent.getGameLargura();
         height = GameInitComponent.getGameAltura();
-
-
-
     }
+
+    public static String getGameStatos() {
+        return status;
+    }
+
+    public static void setGameStatos(String status) {
+        Pong.status = status;    }
 }

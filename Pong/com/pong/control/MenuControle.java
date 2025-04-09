@@ -26,7 +26,7 @@ public class MenuControle {
 
     }
 
-    public void setMenu(int status){
+    public void setMenuStatus(int status){
         this.status = status;
 
     }

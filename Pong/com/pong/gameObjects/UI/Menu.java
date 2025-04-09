@@ -46,7 +46,7 @@ public class Menu extends GameObjects {
                
             }
             else if(options[currentOpitions] == 1){
-                Pong.menu.setMenu(1);
+                Pong.menu.setMenuStatus(1);
                 Pong.setGameStatos("menu");               
                 
             }
@@ -85,10 +85,11 @@ public class Menu extends GameObjects {
                  
     }
 
-     private void setInitComponentValue(){
+    private void setInitComponentValue(){
         px = GameInitComponent.getGameLargura() - 10 / 2;
         py = 200;
     }
 
+    
 
 }
