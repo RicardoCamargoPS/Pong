@@ -20,6 +20,12 @@ public class Menu extends GameObjects {
     private int maxOptions = options.length - 1;
     public boolean up, down, enter;
 
+    
+
+    public Menu() {
+        setInitComponentValue();
+    }
+
     public boolean paused = false;
 
     public void update(){

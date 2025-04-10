@@ -3,7 +3,7 @@ package com.pong.gameObjects.UI;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.pong.game.Pong;
+import com.pong.control.GameInitComponent;
 
 public class Campo {
 
@@ -13,9 +13,8 @@ public class Campo {
 
     public Campo() {
 
-        Largura = Pong.getWhidth() - 10;
-        altura = Pong.getHeight() - 20;
-    
+        Largura = GameInitComponent.getGameLargura() - 10;
+        altura = GameInitComponent.getGameAltura() - 20;    
 
     }
     public void render(Graphics g){

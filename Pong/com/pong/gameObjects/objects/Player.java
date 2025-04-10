@@ -2,9 +2,8 @@ package com.pong.gameObjects.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;
-
-import com.pong.game.Pong;
 import com.pong.gameObjects.GameObjects;
+import com.pong.gameObjects.UI.Campo;
 
 public class Player extends GameObjects {
 
@@ -12,9 +11,14 @@ public class Player extends GameObjects {
     private boolean isMuving = false;
     private int dy = 0;
     private int vel = 3;
+    private int campoPY, campoALtura;
 
 
 public Player(int px, int py) {
+
+    campoPY = Campo.getPy();
+    campoALtura = Campo.getAltura();
+
     this.px = px;
     this.py = py;
     back = new Color(0, 0, 128, 255);
@@ -26,11 +30,11 @@ public Player(int px, int py) {
     @Override
     public void update() {
 
-        if(ladoCima() <= Pong.campo.getPy() + 3){
-            py = Pong.campo.getPy() + 3 ;
+        if(ladoCima() <= campoPY + 3){
+            py = campoPY + 3 ;
         }
-        else if(ladoBaixo()  > Pong.campo.getHeight() + 10){
-            py = Pong.campo.getHeight() - height + 10;
+        else if(ladoBaixo()  > campoALtura + 10){
+            py = campoALtura - height + 10;
         }
         if(isMuving){
             py += (int) dy * vel ;
